@@ -1,49 +1,30 @@
 {
-    "aliases" : { },
-    "mappings" : {
-      "kafka-connect" : {
-        "properties" : {
-          "actions" : {
-            "type" : "text",
-            "fields" : {
-              "keyword" : {
-                "type" : "keyword",
-                "ignore_above" : 256
-              }
-            }
-          },
-          "eventtime" : {
-            "type" : "date",
-			"format" : "epoch_millis"
-          },
-          "filename" : {
-            "type" : "text",
-            "fields" : {
-              "keyword" : {
-                "type" : "keyword",
-                "ignore_above" : 256
-              }
-            }
-          },
-          "owner" : {
-            "type" : "text",
-            "fields" : {
-              "keyword" : {
-                "type" : "keyword",
-                "ignore_above" : 256
-              }
-            }
-          },
-          "watch" : {
-            "type" : "text",
-            "fields" : {
-              "keyword" : {
-                "type" : "keyword",
-                "ignore_above" : 256
-              }
-            }
-          }
-        }
-      }
-    }}
-  }
+	"settings": {
+		"number_of_replicas": 1,
+		"number_of_shards": 3,
+		"analysis": {},
+		"refresh_interval": "1s"
+	},
+	"mappings": {
+		"doc": {
+			"properties": {
+				"actions": {
+					"type": "text"
+				},
+				"eventtime": {
+					"type": "date",
+					"format": "epoch_millis"
+				},
+				"filename": {
+					"type": "text"
+				},
+				"owner": {
+					"type": "text"
+				},
+				"watch": {
+					"type": "text"
+				}
+			}
+		}
+	}
+}

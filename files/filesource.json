@@ -5,6 +5,7 @@
     "file": "/tmp/outputas.txt",
     "topic": "connect-test",
     "key.converter":"org.apache.kafka.connect.storage.StringConverter",
-    "value.converter":"org.apache.kafka.connect.storage.StringConverter"
+    "value.converter":"org.apache.kafka.connect.storage.StringConverter",
+	"batch.size":500
   }
 }
